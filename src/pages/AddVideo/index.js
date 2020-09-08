@@ -104,19 +104,20 @@ const AddVideo = () => {
             <form>
               <div>
                 <table className="tabela">
-                  <th>Add</th>
-                  <th>
+                  <th className="link">
                     Link
                   </th>
-                  <th>Name</th>
+                  <th className="name">Name</th>
+                  <th>  </th>
                 </table>
               </div>
               {inputLinks && inputLinks.map(() => (
                 <>
-                  <input type="checkbox" className="checkbox" onClick={addVideoArray} />
-                  <input className="input_link" onChange={(e) => captureLink(e)} type="" />
-                  <input className="input_name" onChange={(e) => captureName(e)} type="" />
                   <button type="button" onClick={oneMoreField} className="butao">+</button>
+
+                  <input className="input_link" onChange={(e) => captureLink(e)} type="" placeholder="Youtube URL" />
+                  <input className="input_name" onChange={(e) => captureName(e)} type="" placeholder="Name" />
+                  <input type="checkbox" className="checkbox" onClick={addVideoArray} />
                   <br />
                 </>
               ))}
