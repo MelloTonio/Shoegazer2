@@ -62,7 +62,7 @@ const AddVideo = () => {
 
   async function sendToServer(e) {
     e.preventDefault();
-    const URL = `https://shoegazer2.vercel.app/videos/update/${bandName}`;
+    const URL = `https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`;
     const bandsArray = atualLink.slice(1, atualLink.length);
 
     await fetch(URL, {
