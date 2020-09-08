@@ -66,6 +66,7 @@ const AddVideo = () => {
       body: await JSON.stringify({
         nome: bandName,
         cor: 'default',
+        musicas: [{ nome: '', url: '' }],
         new_bands: bandsArray,
       }),
     }).then((response) => response.json()).then((json) => console.log(json));
