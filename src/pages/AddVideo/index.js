@@ -67,7 +67,7 @@ const AddVideo = () => {
 
     await fetch(URL, {
       method: 'post',
-      mode: 'no-cors',
+      mode: 'cors',
 
       body: await JSON.stringify({
         nome: bandName,
