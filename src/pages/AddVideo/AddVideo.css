@@ -29,11 +29,23 @@
 .butao{
     margin-top: 20px;
     margin-left: 15px;
-    height: 35px;
+    height: 30px;
+    background-color: rgb(192, 178, 178);
+    border-radius: 10%;
+    width: 40px;
 }
 
-.input_link{
+.input_link, .input_name, .input_pass{
     width: 250px;
+    padding: 8px 8px;
+    border-radius: 2px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    background-color: rgba(128, 128, 128, 0.472);
+    color: white;
+    transition: all 0.4s;
+
 }
 
 .checkbox{
@@ -95,3 +107,4 @@ td, th {
         margin-left: 20px;
     }
   }
+
