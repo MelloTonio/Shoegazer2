@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../PageDefault';
 import ButtonAdd from './styles';
 
-import Table from '../../components/Table';
-
 import './AddVideo.css';
 
 const AddVideo = () => {
@@ -61,21 +59,28 @@ const AddVideo = () => {
   }
 
   async function sendToServer(e) {
+    e.preventDefault();
     const URL = `https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`;
     const bandsArray = atualLink.slice(1, atualLink.length);
 
-    await fetch(URL, {
-      method: 'post',
-      mode: 'no-cors',
+    try {
+      await fetch(URL, {
+        method: 'post',
+        mode: 'no-cors',
 
-      body: await JSON.stringify({
-        nome: bandName,
-        cor: 'default',
-        musicas: [{ nome: '', url: '' }],
-        new_bands: bandsArray,
-      }),
-    });
-    console.log(URL, bandsArray, bandName);
+        body: await JSON.stringify({
+          nome: bandName,
+          cor: 'default',
+          musicas: [{ nome: '', url: '' }],
+          new_bands: bandsArray,
+        }),
+      });
+    } catch (e) {
+      console.log('lulz');
+    }
+
+    setInputLinks(null);
+    setInputLinks(['1']);
   }
 
   return (
@@ -106,7 +111,7 @@ const AddVideo = () => {
                   <th>Name</th>
                 </table>
               </div>
-              {inputLinks.map(() => (
+              {inputLinks && inputLinks.map(() => (
                 <>
                   <input type="checkbox" className="checkbox" onClick={addVideoArray} />
                   <input className="input_link" onChange={(e) => captureLink(e)} type="" />
