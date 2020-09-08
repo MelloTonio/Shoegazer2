@@ -56,10 +56,12 @@ const AddVideo = () => {
     setVideoLinks('');
   }
 
-  async function sendToServer() {
+  async function sendToServer(e) {
+    e.preventDefault();
+    const URL = `https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`;
     const bandsArray = atualLink.slice(1, atualLink.length);
 
-    await fetch(`https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`, {
+    await fetch(URL, {
       method: 'post',
       mode: 'no-cors',
 
@@ -69,7 +71,8 @@ const AddVideo = () => {
         musicas: [{ nome: '', url: '' }],
         new_bands: bandsArray,
       }),
-    }).then((response) => response.json()).then((json) => console.log(json));
+    });
+    console.log(URL, bandsArray, bandName);
   }
 
   return (
