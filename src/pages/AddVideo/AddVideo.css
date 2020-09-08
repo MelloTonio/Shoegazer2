@@ -110,16 +110,32 @@ th{
 
 @media (max-width: 800px) {
     .input_link{
-        width: 120px;
+        width: 100px;
     }
-    
+
+
     td, th {
-        margin-right: 60px;
+        margin-right: 0px;
         text-align: left;
       }
       .input_name{
         width: 80px;
         margin-left: 20px;
     }
+
+    .link{
+        margin-left: 130px; 
+        color: #161616; 
+        }
+
+    .name{
+        margin-right: 15px;
+        color: #161616;
+    }
+
+    .butao{
+        margin-left: 0px;
+    }
+
   }
 
