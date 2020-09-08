@@ -61,7 +61,7 @@ const AddVideo = () => {
 
     await fetch(`https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`, {
       method: 'post',
-      mode: 'cors',
+      mode: 'no-cors',
 
       body: await JSON.stringify({
         nome: bandName,
