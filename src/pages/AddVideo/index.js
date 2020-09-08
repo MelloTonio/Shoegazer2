@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import PageDefault from '../PageDefault';
 import ButtonAdd from './styles';
 
@@ -56,9 +57,13 @@ const AddVideo = () => {
     setVideoLinks('');
   }
 
+  function BandName(e) {
+    setBandName(e.target.value);
+  }
+
   async function sendToServer(e) {
     e.preventDefault();
-    const URL = `https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`;
+    const URL = `http://localhost:5000/videos/update/${bandName}`;
     const bandsArray = atualLink.slice(1, atualLink.length);
 
     await fetch(URL, {
@@ -87,9 +92,10 @@ const AddVideo = () => {
               New Category
             </ButtonAdd>
             <p>Select Band</p>
-            <select className="option">
+            <select className="option" onChange={(e) => BandName(e)}>
               <option value="" />
-              {categories2.map((category) => <option onClick={(e) => setBandName(e.target.value)} value={category.titulo}>{category.titulo}</option>)}
+
+              {categories2.map((category) => <option value={category.titulo}>{category.titulo}</option>)}
             </select>
 
             <form>
@@ -118,7 +124,7 @@ const AddVideo = () => {
                     <input onChange={(e) => setPassword(e.target.value)} className="input_pass" placeholder="Password" />
                   </>
                 ) : (
-                    <button className="button_submit" type="submit" onClick={sendToServer}>
+                    <button className="button_submit" type="submit" onClick={(e) => sendToServer(e)}>
                       Submit
                     </button>
                   )}
