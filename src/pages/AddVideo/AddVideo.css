@@ -28,12 +28,25 @@
 
 .butao{
     margin-top: 20px;
-    margin-left: 15px;
-    height: 35px;
+    margin-left: 20px;
+    margin-right:20px;
+    height: 30px;
+    background-color: rgb(192, 178, 178);
+    border-radius: 10%;
+    width: 40px;
 }
 
-.input_link{
+.input_link, .input_name, .input_pass{
     width: 250px;
+    padding: 8px 8px;
+    border-radius: 2px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    background-color: rgba(128, 128, 128, 0.472);
+    color: white;
+    transition: all 0.4s;
+
 }
 
 .checkbox{
@@ -57,6 +70,20 @@ td, th {
     text-align: left;
     padding: 8px;
   }
+
+th{
+    margin-right: 25px;
+    margin-left: 10px;
+    width: 10px;
+}
+
+.link{
+    margin-left: 190px;
+}
+
+.name{
+    margin-left: 100px;
+}
 
 .tabela {
     display: flex;
@@ -83,15 +110,32 @@ td, th {
 
 @media (max-width: 800px) {
     .input_link{
-        width: 120px;
+        width: 100px;
     }
-    
+
+
     td, th {
-        margin-right: 60px;
+        margin-right: 0px;
         text-align: left;
       }
       .input_name{
         width: 80px;
         margin-left: 20px;
     }
+
+    .link{
+        margin-left: 130px; 
+        color: #161616; 
+        }
+
+    .name{
+        margin-right: 15px;
+        color: #161616;
+    }
+
+    .butao{
+        margin-left: 0px;
+    }
+
   }
+

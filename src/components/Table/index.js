@@ -47,7 +47,7 @@ export default function SimpleTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.rows.map((row) => (
+          {props.rows.splice(0, 6).map((row) => (
             <StyledTableRow key={row.titulo}>
               <TableCell component="th" scope="row">
                 {row.titulo}

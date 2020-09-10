@@ -34,7 +34,7 @@ const AddVideo = () => {
   }, []);
 
   async function sendData() {
-    await fetch('https://tranquil-beach-70411.herokuapp.com/videos', {
+    await fetch('http://localhost:5000/videos', {
       method: 'post',
       mode: 'no-cors',
 
@@ -70,6 +70,7 @@ const AddVideo = () => {
           >
             <FormField
               value={values}
+              categories={categories}
               onChange={(e) => {
                 setValue('name', e.target.value);
               }}

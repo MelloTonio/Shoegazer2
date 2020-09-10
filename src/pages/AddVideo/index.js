@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../PageDefault';
 import ButtonAdd from './styles';
 
-import Table from '../../components/Table';
-
 import './AddVideo.css';
 
 const AddVideo = () => {
@@ -51,28 +49,42 @@ const AddVideo = () => {
   }
 
   function oneMoreField() {
-    setInputLinks([...inputLinks, '1']);
+    if (inputLinks.length >= 6) {
+      setInputLinks([...inputLinks.splice(0, 6)]);
+    } else {
+      setInputLinks([...inputLinks, '1']);
+    }
 
     setVideoLinks('');
   }
 
-  async function sendToServer() {
+  function BandName(e) {
+    setBandName(e.target.value);
+  }
+
+  async function sendToServer(e) {
+    e.preventDefault();
+    const URL = `https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`;
     const bandsArray = atualLink.slice(1, atualLink.length);
 
-    await fetch(`https://tranquil-beach-70411.herokuapp.com/videos/update/${bandName}`, {
-      method: 'post',
-      mode: 'no-cors',
+    try {
+      await fetch(URL, {
+        method: 'post',
+        mode: 'no-cors',
 
-      body: await JSON.stringify({
-        titulo: bandName,
-        cor: 'default',
-        new_bands: bandsArray,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-        'Access-Control-Allow-Origin': '*',
-      },
-    }).then((response) => response.json()).then((json) => console.log(json));
+        body: await JSON.stringify({
+          nome: bandName,
+          cor: 'default',
+          musicas: [{ nome: '', url: '' }],
+          new_bands: bandsArray,
+        }),
+      });
+    } catch (e) {
+      console.log('lulz');
+    }
+
+    setInputLinks(null);
+    setInputLinks(['1']);
   }
 
   return (
@@ -87,29 +99,31 @@ const AddVideo = () => {
               New Category
             </ButtonAdd>
             <p>Select Band</p>
-            <select className="option">
+            <select className="option" onChange={(e) => BandName(e)}>
               <option value="" />
-              {categories2.map((category) => <option onClick={(e) => setBandName(e.target.value)} value={category.titulo}>{category.titulo}</option>)}
+
+              {categories2.map((category) => <option value={category.titulo}>{category.titulo}</option>)}
             </select>
 
             <form>
               <div>
                 <table className="tabela">
-                  <th>Add</th>
-                  <th>
+                  <th className="link">
                     Link
                   </th>
-                  <th>Name</th>
+                  <th className="name">Name</th>
+                  <th>  </th>
                 </table>
               </div>
-              {inputLinks.map(() => (
-                <>
-                  <input type="checkbox" className="checkbox" onClick={addVideoArray} />
-                  <input className="input_link" onChange={(e) => captureLink(e)} type="" />
-                  <input className="input_name" onChange={(e) => captureName(e)} type="" />
+              {inputLinks && inputLinks.map(() => (
+                <div className="form">
                   <button type="button" onClick={oneMoreField} className="butao">+</button>
+
+                  <input className="input_link" onChange={(e) => captureLink(e)} type="" placeholder="Youtube URL" />
+                  <input className="input_name" onChange={(e) => captureName(e)} type="" placeholder="Name" />
+                  <input type="checkbox" className="checkbox" onClick={addVideoArray} />
                   <br />
-                </>
+                </div>
               ))}
 
               <div className="center">
@@ -118,7 +132,7 @@ const AddVideo = () => {
                     <input onChange={(e) => setPassword(e.target.value)} className="input_pass" placeholder="Password" />
                   </>
                 ) : (
-                    <button className="button_submit" type="submit" onClick={sendToServer}>
+                    <button className="button_submit" type="submit" onClick={(e) => sendToServer(e)}>
                       Submit
                     </button>
                   )}
