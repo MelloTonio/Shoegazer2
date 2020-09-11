@@ -14,6 +14,7 @@ import Page404 from './pages/Page404';
 import Home from './pages/Home/Home';
 import AddVideo from './pages/AddVideo';
 import AddCategory from './pages/AddCategory';
+import ManageBands from './pages/ManageBands';
 
 ReactDOM.render(
   <div>
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path="/" component={Home} exact />
         <Route path="/add/video" component={AddVideo} exact />
         <Route path="/add/category" component={AddCategory} exact />
+        <Route path="/manage/bands" component={ManageBands} exact />
         <Route component={Page404} />
       </Switch>
       <ReactJkMusicPlayer {...options} />

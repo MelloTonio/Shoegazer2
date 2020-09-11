@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.button`
     color: var(--white);
@@ -26,6 +26,6 @@ const Button = styled.button`
         outline: 0;
         text-align: center;
     }
-`
+`;
 
 export default Button;

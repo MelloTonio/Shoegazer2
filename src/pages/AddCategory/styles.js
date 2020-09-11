@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Button = styled.button`
     color: white;
@@ -7,13 +7,14 @@ const Button = styled.button`
     background-color: black;
     font-size: 16px;
     border-radius: 4px;
-    padding: 16px 24px;
+    padding: 4px 8px;
     text-decoration: none;
     transition: opacity .3s;
     &:hover,
     &:focus{
         opacity: .5
     }
+    
 
     @media(max-width: 800px){
         background-color: var(--primary);
@@ -27,6 +28,6 @@ const Button = styled.button`
         outline: 0;
         text-align: center;
     }
-`
+`;
 
 export default Button;

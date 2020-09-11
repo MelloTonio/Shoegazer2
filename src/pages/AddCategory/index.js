@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PageDefault from '../PageDefault';
 import FormField from '../../components/FormField';
 
 import './AddVideo.css';
 import Table from '../../components/Table';
-import { func } from 'prop-types';
+import Button from './styles';
 
 import useForm from '../../components/Hooks/useForm';
 
@@ -80,10 +81,11 @@ const AddVideo = () => {
           <div className="Categories-container">
             <div className="cat-title">
               <h2>Bands</h2>
+              <br />
+              <Button className="manage_bands" as={Link} to="/manage/bands">Manage bands</Button>
             </div>
             <div className="Categories">
               <div className="tabler" />
-
               {
                 categories.length === 0 && (
                   <div className="centered">

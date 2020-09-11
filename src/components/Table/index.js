@@ -28,7 +28,7 @@ const StyledTableRow = withStyles((theme) => ({
 
 const useStyles = makeStyles({
   table: {
-    width: 500,
+    width: 300,
 
   },
 });
@@ -41,19 +41,19 @@ export default function SimpleTable(props) {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>{props.titulo}</StyledTableCell>
-            <StyledTableCell>{props.null}</StyledTableCell>
-            <StyledTableCell>{props.null}</StyledTableCell>
+            <StyledTableCell>Band</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {props.rows.splice(0, 6).map((row) => (
             <StyledTableRow key={row.titulo}>
               <TableCell component="th" scope="row">
-                {row.titulo}
+                <div>
+                  {row.titulo}
+                </div>
+                <div />
               </TableCell>
-              <TableCell align="right"><a href="#">Editar</a></TableCell>
-              <TableCell align="right"><a href="#">Deletar</a></TableCell>
+
             </StyledTableRow>
           ))}
         </TableBody>
