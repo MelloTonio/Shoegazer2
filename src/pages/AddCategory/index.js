@@ -35,7 +35,7 @@ const AddVideo = () => {
   }, []);
 
   async function sendData() {
-    await fetch('http://localhost:5000/videos', {
+    await fetch('https://tranquil-beach-70411.herokuapp.com/videos', {
       method: 'post',
       mode: 'no-cors',
 
