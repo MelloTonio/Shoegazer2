@@ -14,7 +14,7 @@ const FormField = ({ value, onChange, categories }) => {
   return (
     <>
 
-      {categories && categories.length <= 6 ? (
+      {categories && categories.length <= 4 ? (
         <>
           <div className="division">
             <label className="Text">Band Name</label>
