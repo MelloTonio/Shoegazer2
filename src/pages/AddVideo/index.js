@@ -93,7 +93,7 @@ const AddVideo = () => {
         <div className="Supreme-Container-Leader">
           <div className="Container">
             <ButtonAdd as={Link} to="/add/category" className="buttonLink">
-              New Category
+              New Band
             </ButtonAdd>
 
             <div className="Container-video">
