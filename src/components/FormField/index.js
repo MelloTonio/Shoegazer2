@@ -7,14 +7,13 @@ import './FormField.css';
 
 const FormField = ({ value, onChange, categories }) => {
   const [password, setPassword] = React.useState(null);
-  console.log(categories);
 
   const [buttonValue, setButtonValue] = React.useState(value.titulo);
 
   return (
     <>
 
-      {categories && categories.length <= 6 ? (
+      {categories && categories.length <= 4 ? (
         <>
           <div className="division">
             <label className="Text">Band Name</label>
@@ -36,13 +35,13 @@ const FormField = ({ value, onChange, categories }) => {
           </div>
         </>
       ) : (
-          <>
-            <div className="exceed">
-              <p>Max number of bands exceeded</p>
-              <img src={Img} width="150" style={{ marginTop: '40px' }} />
-            </div>
-          </>
-        )}
+        <>
+          <div className="exceed">
+            <p>Max number of bands exceeded</p>
+            <img src={Img} width="150" style={{ marginTop: '40px' }} />
+          </div>
+        </>
+      )}
 
     </>
   );

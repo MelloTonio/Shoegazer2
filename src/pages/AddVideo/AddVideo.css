@@ -3,17 +3,22 @@
     justify-content: center;
 }
 
-.Container{
-    height: 500px;
+.Container-video{
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.1);
-    width: 840%;
+    border-radius: 5%;
+    background-color:rgba(128, 128, 128, 0.1);
+
 }
 
 .Title{
+    margin-bottom: 30px;
+    font-family: roboto;
+}
+
+.Title-video{
     margin-bottom: 30px;
     font-family: roboto;
 }
@@ -58,6 +63,16 @@
 
 .button_submit{
     margin-top: 30px;
+    color: var(--white);
+    border: 1px solid var(--white);
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+    
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: black;
+    transition: opacity .3s;
 }
 
 .input_name{
@@ -102,6 +117,7 @@ th{
 .center{
     display: flex;
     justify-content: center;
+    margin-bottom: -0px;
 }
 
 .input_pass{
@@ -115,27 +131,33 @@ th{
 
 
     td, th {
+        
         margin-right: 0px;
         text-align: left;
+        
       }
       .input_name{
         width: 80px;
         margin-left: 20px;
+        
     }
 
     .link{
         margin-left: 130px; 
-        color: #161616; 
+        color: #212121; 
         }
 
     .name{
-        margin-right: 15px;
-        color: #161616;
+        margin-right: 20px;
+        color: #212121; 
     }
 
     .butao{
-        margin-left: 0px;
+        margin-left: 5px;
     }
 
+    .Container-video{
+        width: 320px;
+    }
   }
 

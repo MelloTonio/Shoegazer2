@@ -49,8 +49,8 @@ const AddVideo = () => {
   }
 
   function oneMoreField() {
-    if (inputLinks.length >= 6) {
-      setInputLinks([...inputLinks.splice(0, 6)]);
+    if (inputLinks.length >= 5) {
+      setInputLinks([...inputLinks.splice(0, 5)]);
     } else {
       setInputLinks([...inputLinks, '1']);
     }
@@ -92,55 +92,58 @@ const AddVideo = () => {
       <PageDefault>
         <div className="Supreme-Container-Leader">
           <div className="Container">
-            <div className="Title">
-              <h1>Add New Video</h1>
-            </div>
             <ButtonAdd as={Link} to="/add/category" className="buttonLink">
               New Category
             </ButtonAdd>
-            <p>Select Band</p>
-            <select className="option" onChange={(e) => BandName(e)}>
-              <option value="" />
 
-              {categories2.map((category) => <option value={category.titulo}>{category.titulo}</option>)}
-            </select>
-
-            <form>
-              <div>
-                <table className="tabela">
-                  <th className="link">
-                    Link
-                  </th>
-                  <th className="name">Name</th>
-                  <th>  </th>
-                </table>
+            <div className="Container-video">
+              <div className="Title-video">
+                <h1>Add New Video</h1>
               </div>
-              {inputLinks && inputLinks.map(() => (
-                <div className="form">
-                  <button type="button" onClick={oneMoreField} className="butao">+</button>
+              <p>Select Band</p>
+              <select className="option" onChange={(e) => BandName(e)}>
+                <option value="" />
 
-                  <input className="input_link" onChange={(e) => captureLink(e)} type="" placeholder="Youtube URL" />
-                  <input className="input_name" onChange={(e) => captureName(e)} type="" placeholder="Name" />
-                  <input type="checkbox" className="checkbox" onClick={addVideoArray} />
-                  <br />
+                {categories2.map((category) => <option value={category.titulo}>{category.titulo}</option>)}
+              </select>
+
+              <form>
+                <div>
+                  <table className="tabela">
+                    <th className="link">
+                      Link
+                    </th>
+                    <th className="name">Name</th>
+                    <th>  </th>
+                  </table>
                 </div>
-              ))}
+                {inputLinks && inputLinks.map(() => (
+                  <div className="form">
+                    <button type="button" onClick={oneMoreField} className="butao">+</button>
 
-              <div className="center">
-                {password !== 'mellome' ? (
-                  <>
-                    <input onChange={(e) => setPassword(e.target.value)} className="input_pass" placeholder="Password" />
-                  </>
-                ) : (
-                    <button className="button_submit" type="submit" onClick={(e) => sendToServer(e)}>
-                      Submit
-                    </button>
-                  )}
-              </div>
-            </form>
+                    <input className="input_link" onChange={(e) => captureLink(e)} type="" placeholder="Youtube URL" />
+                    <input className="input_name" onChange={(e) => captureName(e)} type="" placeholder="Name" />
+                    <input type="checkbox" className="checkbox" onClick={addVideoArray} />
+                    <br />
+                  </div>
+                ))}
 
+                <div className="center">
+                  {password !== 'mellome' ? (
+                    <>
+                      <input onChange={(e) => setPassword(e.target.value)} className="input_pass" placeholder="Password" />
+                    </>
+                  ) : (
+                      <button className="button_submit" type="submit" onClick={(e) => sendToServer(e)}>
+                        Submit
+                      </button>
+                    )}
+                </div>
+              </form>
+            </div>
           </div>
         </div>
+
       </PageDefault>
     </>
   );
