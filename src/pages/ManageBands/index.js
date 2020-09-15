@@ -49,7 +49,7 @@ const ManageBands = () => {
                     <div className="Categories-container">
                         <div className="cat-title" />
                         <div className="Categories">
-                            {categories && categories.map((category) => (
+                            {categories ? categories.map((category) => (
                                 <>
                                     <BandDescription
                                         titulo={category.titulo}
@@ -59,7 +59,7 @@ const ManageBands = () => {
                                     />
                                     <br />
                                 </>
-                            ))}
+                            )) : (<h1>Loading...</h1>)}
                             <div className="holdButton">
                                 <button className="delete" onClick={deleteSelectedBand}>Delete</button>
                             </div>

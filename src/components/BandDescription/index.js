@@ -2,6 +2,8 @@ import React from 'react';
 
 import './BandDescription.css';
 
+import iconLove from '../../assets/images/iconLove.jpg';
+
 const BandDescription = ({
     titulo,
     musicas,
@@ -11,7 +13,7 @@ const BandDescription = ({
 
         <div className="container">
 
-            <div className="Picture">no image found!</div>
+            <div className="Picture"><img className="" src={iconLove} width="100" height="95" /></div>
             <div className="holdInfo">
                 <div className="titulo">
                     {' '}
@@ -20,7 +22,7 @@ const BandDescription = ({
                 <div className="description">
                     {' '}
                     <p>
-                        {musicas && musicas.length}
+                        {musicas ? musicas.length : '0'}
                         {' '}
           song(s) registered
           <input

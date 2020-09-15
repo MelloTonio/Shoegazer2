@@ -2,6 +2,7 @@
     border: 3px solid;
     height: 100px;
     display: flex;
+    background-color: #212121;
 }
 
 .holdInfo{
@@ -17,7 +18,6 @@
     width: 300px;
     padding: 5px;
     display: flex;
-    align-content: center;
     align-items: center;
     justify-content: center;
     font-family: roboto;
@@ -32,7 +32,6 @@
     outline: 1px solid lightblue;
 
     margin-top: 10px;
-    
 
 }
 
@@ -48,10 +47,14 @@
 
 @media (max-width: 800px) {
    .holdInfo{
-       width: 200px;
+       width: 190px;
+   }
+
+   .titulo{
+        padding: 10px;
    }
 
    .description{
-       padding: 5px;
+       padding: 10px;
    }
   }
