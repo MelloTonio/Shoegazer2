@@ -64,7 +64,6 @@ const AddVideo = () => {
           <form
             className="Form"
             onSubmit={(e) => {
-              e.preventDefault();
               setValue(defaultValues);
               sendData();
             }}
