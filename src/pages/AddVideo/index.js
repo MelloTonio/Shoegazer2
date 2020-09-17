@@ -98,11 +98,11 @@ const AddVideo = () => {
 
             <div className="Container-video">
               <div className="Title-video">
-                <h1>Add New Video</h1>
+                <h1>Create New Video</h1>
               </div>
               <p>Select Band</p>
               <select className="option" onChange={(e) => BandName(e)}>
-                <option value="" />
+                <option value="">- Select One -</option>
 
                 {categories2.map((category) => <option value={category.titulo}>{category.titulo}</option>)}
               </select>
@@ -122,6 +122,7 @@ const AddVideo = () => {
                     <button type="button" onClick={oneMoreField} className="butao">+</button>
 
                     <input className="input_link" onChange={(e) => captureLink(e)} type="" placeholder="Youtube URL" />
+
                     <input className="input_name" onChange={(e) => captureName(e)} type="" placeholder="Name" />
                     <input type="checkbox" className="checkbox" onClick={addVideoArray} />
                     <br />

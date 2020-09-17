@@ -29,7 +29,15 @@
 
 .option{
     margin-top: 20px;
+    padding: 5px;
 }
+
+.input_link:focus, .input_name:focus, .input_pass:focus{
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 2px solid #3951b2;
+    
+}
+
 
 .butao{
     margin-top: 20px;

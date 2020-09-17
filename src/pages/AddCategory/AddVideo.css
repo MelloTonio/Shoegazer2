@@ -86,20 +86,12 @@
 
 .input{
     width: 250px;
-    padding: 8px 8px;
-    border-radius: 2px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid gray;
-    background-color: rgba(128, 128, 128, 0.472);
+    background-color: #161616;
     color: white;
     transition: all 0.4s;
 }
 
-.input:focus{
-    background-color: rgba(128, 128, 128, 0.3);
-    width: 300px;
-}
+
 
 .exceed{
     text-align: center;
@@ -135,6 +127,10 @@
     
     width: 300px;
 }
+
+  
+
+
 
 
 @media (max-width: 800px) {

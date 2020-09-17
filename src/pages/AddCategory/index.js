@@ -57,7 +57,7 @@ const AddVideo = () => {
       <div className="Supreme-Container-Leader">
         <div className="Container">
           <div className="Title">
-            <h2>Add New Band</h2>
+            <h2 className="create_band">Create New Band</h2>
             <br />
             <p>{values.name}</p>
           </div>

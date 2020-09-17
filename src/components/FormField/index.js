@@ -16,32 +16,36 @@ const FormField = ({ value, onChange, categories }) => {
       {categories && categories.length <= 4 ? (
         <>
           <div className="division">
-            <label className="Text">Band Name</label>
-            <input
-              className="input"
-              onChange={onChange}
-              value={buttonValue}
-            />
+            <div className="label-float">
+              <input
+                className="input"
+                onChange={onChange}
+                value={buttonValue}
+                placeholder="  "
+              />
+              <label className="Text">Band</label>
+            </div>
           </div>
-
           <div className="division">
             {password !== 'mellome' ? (
               <>
-                <p>Digite a senha</p>
-                <input onChange={(e) => setPassword(e.target.value)} className="input" />
-                {' '}
+                <div className="label-float">
+                  <input onChange={(e) => setPassword(e.target.value)} className="input" placeholder="  " />
+                  <label className="Text">Password</label>
+                </div>
               </>
+
             ) : (<button type="submit" className="Butao" onClick={() => setButtonValue('')}>Submit</button>)}
           </div>
         </>
       ) : (
-        <>
-          <div className="exceed">
-            <p>Max number of bands exceeded</p>
-            <img src={Img} width="150" style={{ marginTop: '40px' }} />
-          </div>
-        </>
-      )}
+          <>
+            <div className="exceed">
+              <p>Max number of bands exceeded</p>
+              <img src={Img} width="150" style={{ marginTop: '40px' }} />
+            </div>
+          </>
+        )}
 
     </>
   );
